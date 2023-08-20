@@ -23,14 +23,39 @@ Enhance your browsing experience and ensure your sites are optimized for all use
 
 To use this extension in developer mode follow the below steps
 ==============================================================
--**Clone the repository**
--**Launch the Chrome browser**
--**Go to chrome://extensions/**
--**On the Extensions page, locate the "Developer mode" toggle switch in the top-right corner and turn it on**
--**With Developer mode enabled, you'll see additional buttons at the top of the page: "Load unpacked", "Pack extension", and "Update".**
--**Click on the "Load unpacked" button.**
--**This will open a file dialog. Navigate to the folder where you cloned and select that folder.**
--**Your extension should now appear in the list of extensions on the page**
--**You should see the extension's icon next to the address bar in Chrome. Click on it to ensure it works as expected.**
--**While in Developer mode, any changes you make to the extension's files can be reloaded by clicking the "Reload" link under the extension's entry on the Extensions page.**
--**Enable the extension , it will reload the page and show you the loading time automatically .** 
+# URL Performance Checker Deployment Guide
+
+## Local Testing and Development
+
+To test and develop the "URL Performance Checker" extension locally in your Chrome browser, follow these steps:
+
+1. **Clone the repository**:  
+   Use your preferred method to clone the extension's repository to your local machine.
+   
+2. **Launch the Chrome browser**:  
+   Open the Google Chrome browser on your computer.
+   
+3. **Access the Extensions page**:  
+   Navigate to `chrome://extensions/` in your browser's address bar.
+
+4. **Enable Developer Mode**:  
+   - On the Extensions page, locate the "Developer mode" toggle switch in the top-right corner.
+   - Turn "Developer mode" on.
+
+5. **Load the Extension**:  
+   - With Developer mode enabled, you'll see additional buttons at the top of the page: "Load unpacked", "Pack extension", and "Update".
+   - Click on the "Load unpacked" button.
+   - This will open a file dialog. Navigate to the folder where you cloned the repository and select that folder.
+
+6. **Verify the Extension's Installation**:  
+   - Your extension should now appear in the list of extensions on the Extensions page.
+   - You should see the extension's icon next to the address bar in Chrome. Click on it to ensure it works as expected.
+
+7. **Reload After Changes (For Development)**:  
+   While in Developer mode, any changes you make to the extension's files can be reflected by clicking the "Reload" link under the extension's entry on the Extensions page.
+
+8. **Usage**:  
+   Enable the extension. Once activated, it will automatically reload the page and display the loading time.
+
+Happy testing and developing!
+
