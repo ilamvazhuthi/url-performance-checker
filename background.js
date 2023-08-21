@@ -28,3 +28,28 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     chrome.runtime.sendMessage({ action: 'updateStatus', status: 'Load time calculated.' });
   }
 });
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.action === 'clearCache') {
+    chrome.browsingData.remove({}, { cache: true }, () => {
+      chrome.runtime.sendMessage({ action: 'updateStatus', status: 'Cache cleared.' });
+    });
+  }
+});
+
+const DUMMY_FILE_URL = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+const DUMMY_FILE_SIZE_MB = 0.015;  // An estimation of the file size in MB
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.action === 'testInternetSpeed') {
+    const startTime = Date.now();
+    fetch(DUMMY_FILE_URL)
+      .then(response => response.blob())
+      .then(data => {
+        const endTime = Date.now();
+        const durationSeconds = (endTime - startTime) / 1000;
+        const speedMbps = (DUMMY_FILE_SIZE_MB / durationSeconds).toFixed(2);
+        chrome.runtime.sendMessage({ action: 'updateSpeedResult', speed: speedMbps });
+      });
+  }
+});
